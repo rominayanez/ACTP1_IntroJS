@@ -14,8 +14,15 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style>
+        .grey{
+            background-color: grey;
+            transition-delay: 1s;
+        }
+    </style>
   </head>
   <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <h1> Hey !! </h1>
     <section class="section-1">
       <h1> Hey </h1>
@@ -62,5 +69,30 @@
 
       </fieldset>
     </form>
+    <script>
+        $("h1").css({"color":"red"});
+        $(".section-1").css({"background-color":"yellow"});
+        $(".counter").on("click", function(){
+            var temp = $(".counter");
+            var counter = temp.text();
+            console.log(counter);
+            var parseCounter = parseInt(counter);
+            console.log(parseCounter)
+            temp.text(parseCounter + 10);
+        })
+
+        $("#row-3").on("click", function(){
+            $("#row-3").addClass("grey");
+
+        })
+        $(".section-1 h1").on("click", function(){
+            var size = $(".section-1 h1").css("font-size");
+            size = parseInt(size);
+            var new_size = size * 2;
+            $(".section-1 h1").css("font-size",new_size+"px");
+        })
+
+
+    </script>
   </body>
 </html>
